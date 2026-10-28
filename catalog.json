@@ -1,0 +1,144 @@
+{
+  "name": "maya-node-plugin-index",
+  "url": "https://github.com/MengXingXiaoMing/maya-node-plugin-index",
+  "source": "https://github.com/MengXingXiaoMing/maya-node-plugin-index",
+  "updated": "2026-10-28",
+  "count": 4,
+  "categories": {
+    "rigging": {
+      "en": "Rigging",
+      "zh": "绑定"
+    },
+    "workflow": {
+      "en": "Workflow",
+      "zh": "工作流"
+    },
+    "window": {
+      "en": "Windows & UI",
+      "zh": "窗口与界面"
+    },
+    "animation": {
+      "en": "Animation",
+      "zh": "动画"
+    },
+    "modeling": {
+      "en": "Modeling",
+      "zh": "建模"
+    },
+    "utility": {
+      "en": "Utilities",
+      "zh": "实用工具"
+    }
+  },
+  "plugins": [
+    {
+      "name": "变换传递（解缠绕）",
+      "description": "把源对象的位移/旋转实时传递到目标对象，并对欧拉角做解缠绕，累加旋转不会在 180° 翻转。",
+      "author": "詹康明",
+      "version": "1.0.0",
+      "node_id": "0x00151501",
+      "node_name": "transformTransfer",
+      "category": "rigging",
+      "tags": [
+        "绑定",
+        "动画",
+        "约束"
+      ],
+      "repo": "MengXingXiaoMing/maya-node-plugin-index",
+      "subpath": "packages/0x00151501",
+      "entry": "transformTransfer.py",
+      "branch": "main",
+      "maya_versions": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "added": "2026-10-29",
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-index"
+    },
+    {
+      "name": "样条 IK",
+      "description": "用一条 NURBS 曲线驱动骨骼链的样条 IK 节点，支持采样密度、偏移和半径控制。",
+      "author": "詹康明",
+      "version": "1.0",
+      "node_id": "0x00141486",
+      "node_name": "simpleSplineIK",
+      "category": "rigging",
+      "tags": [
+        "绑定",
+        "IK",
+        "曲线"
+      ],
+      "repo": "MengXingXiaoMing/maya-node-plugin-index",
+      "subpath": "packages/0x00141486",
+      "entry": "selfIK.py",
+      "branch": "main",
+      "maya_versions": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "added": "2026-10-29",
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-index"
+    },
+    {
+      "name": "魔方绑定",
+      "description": "程序化生成任意尺寸的魔方绑定：每层独立控制器、90° 吸附提交、自动配色。",
+      "author": "詹康明",
+      "version": "2.0.0",
+      "node_id": "0x00141488",
+      "node_name": "rubikCubeNode",
+      "category": "rigging",
+      "tags": [
+        "绑定",
+        "程序化",
+        "魔方"
+      ],
+      "repo": "MengXingXiaoMing/maya-node-plugin-index",
+      "subpath": "packages/0x00141488",
+      "entry": "rubikCube.py",
+      "branch": "main",
+      "maya_versions": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "added": "2026-10-29",
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-index"
+    },
+    {
+      "name": "通用附着版卷轴",
+      "description": "打开通用附着版卷轴窗口；每次运行会卸载并重新加载插件和窗口模块，改完脚本不用重启 Maya。",
+      "author": "詹康明",
+      "version": "1.0.0",
+      "node_id": "0x00151502",
+      "node_name": "scrollMarketNode",
+      "category": "workflow",
+      "tags": [
+        "卷轴",
+        "附着",
+        "窗口"
+      ],
+      "repo": "MengXingXiaoMing/maya-node-plugin-index",
+      "subpath": "packages/0x00151502",
+      "entry": "scroll_market_node.py",
+      "branch": "main",
+      "run": "cmds.openScrollMarket()",
+      "maya_versions": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "added": "2026-10-29",
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-index"
+    }
+  ]
+}

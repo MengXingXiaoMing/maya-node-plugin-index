@@ -1,0 +1,8 @@
+{
+  "rigging": { "en": "Rigging", "zh": "绑定" },
+  "workflow": { "en": "Workflow", "zh": "工作流" },
+  "window": { "en": "Windows & UI", "zh": "窗口与界面" },
+  "animation": { "en": "Animation", "zh": "动画" },
+  "modeling": { "en": "Modeling", "zh": "建模" },
+  "utility": { "en": "Utilities", "zh": "实用工具" }
+}
