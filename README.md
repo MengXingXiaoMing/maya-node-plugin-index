@@ -48,7 +48,7 @@ catalog.json                市场读取的构建产物
 python scripts/build_catalog.py
 ```
 
-4. 提 PR。CI 会检查：
+4. 运行 `python scripts/build_catalog.py` 生成 `catalog.json`，然后提 PR。构建脚本会检查：
 
 - `node_id` 格式和全局唯一
 - 包目录名是否等于 `node_id`
@@ -56,7 +56,7 @@ python scripts/build_catalog.py
 - `NODE_INFO` 的 `node` / `node_id` 是否和条目一致
 - 分类是否存在于 `categories.json`
 
-合并后 GitHub Actions 会自动重新生成 `catalog.json`，市场下一次刷新即可看到。
+合并后重新运行构建脚本（或配置 GitHub Actions）生成 `catalog.json`，市场下一次刷新即可看到。
 
 ## 字段说明
 
