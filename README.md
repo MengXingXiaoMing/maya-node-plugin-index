@@ -20,8 +20,12 @@ catalog.json                市场读取的构建产物
 
 ## 添加一个插件
 
-1. 把自己的插件文件夹放进 `packages/<node_id>/`，文件夹名必须等于节点注册序号。
-2. 在 `plugins/` 下新建 `<node_id>.json`：
+有两种方式，推荐第一种，因为索引仓库不会随着插件变多而变成巨型仓库：
+
+- **作者仓库托管（推荐）**：`repo` 填你自己的 GitHub 仓库，`subpath` 指向仓库里的插件目录（可以为空）。索引仓库只存一条 JSON。
+- **索引仓库托管**：把插件文件夹放进 `packages/<node_id>/`，`subpath` 填 `packages/<node_id>`，`repo` 填 `MengXingXiaoMing/maya-node-plugin-index`。当前 4 个示例用这种方式，方便直接演示。
+
+在 `plugins/` 下新建 `<node_id>.json`：
 
 ```json
 {
@@ -42,13 +46,13 @@ catalog.json                市场读取的构建产物
 }
 ```
 
-3. 运行：
+3. 生成目录：
 
 ```bash
 python scripts/build_catalog.py
 ```
 
-4. 运行 `python scripts/build_catalog.py` 生成 `catalog.json`，然后提 PR。构建脚本会检查：
+4. 提 PR。构建脚本会检查：
 
 - `node_id` 格式和全局唯一
 - 包目录名是否等于 `node_id`
