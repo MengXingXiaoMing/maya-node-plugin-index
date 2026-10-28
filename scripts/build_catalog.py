@@ -25,7 +25,8 @@ CATEGORIES_PATH = os.path.join(ROOT, "categories.json")
 CATALOG_PATH = os.path.join(ROOT, "catalog.json")
 
 NODE_ID_RE = re.compile(r"^0x[0-9A-Fa-f]{1,8}$")
-REQUIRED = ("name", "node_id", "node_name", "repo", "subpath", "entry", "version")
+REQUIRED = ("name", "node_id", "node_name", "repo", "entry", "version")
+INDEX_REPO = "MengXingXiaoMing/maya-node-plugin-index"
 
 
 def read_json(path):
@@ -92,31 +93,41 @@ def main():
             continue
         seen_ids[node_value] = os.path.basename(path)
 
-        package_dir = os.path.join(ROOT, item["subpath"])
-        entry_path = os.path.join(package_dir, item["entry"])
-        if not os.path.isdir(package_dir):
-            errors.append("%s: package folder missing: %s" % (os.path.basename(path), item["subpath"]))
-            continue
-        if not os.path.isfile(entry_path):
-            errors.append("%s: entry file missing: %s" % (os.path.basename(path), item["entry"]))
-            continue
-        if os.path.basename(package_dir).lower() != str(item["node_id"]).lower():
-            errors.append("%s: package folder must be named after node_id" % os.path.basename(path))
-            continue
+        subpath = str(item.get("subpath") or "").strip("/\\")
+        index_hosted = str(item.get("repo", "")).lower() == INDEX_REPO.lower()
 
-        info = read_node_info(entry_path)
-        if info:
-            info_id = info.get("node_id") or info.get("id")
-            if info_id and node_id_value(info_id) != node_value:
-                errors.append("%s: NODE_INFO.node_id does not match catalog node_id" % os.path.basename(path))
+        # 索引托管的包做完整本地校验；作者自己仓库的条目只校验元数据，
+        # 安装时由市场下载作者仓库并解析 NODE_INFO。
+        if index_hosted:
+            if not subpath:
+                errors.append("%s: index-hosted entries need subpath" % os.path.basename(path))
                 continue
-            if info.get("node") and info.get("node") != item["node_name"]:
-                errors.append("%s: NODE_INFO.node does not match node_name" % os.path.basename(path))
+            package_dir = os.path.join(ROOT, subpath)
+            entry_path = os.path.join(package_dir, item["entry"])
+            if not os.path.isdir(package_dir):
+                errors.append("%s: package folder missing: %s" % (os.path.basename(path), subpath))
                 continue
-            if info.get("version") and str(info.get("version")) != str(item["version"]):
-                print("warning: %s: NODE_INFO.version %s != catalog version %s" % (
-                    os.path.basename(path), info.get("version"), item["version"]))
+            if not os.path.isfile(entry_path):
+                errors.append("%s: entry file missing: %s" % (os.path.basename(path), item["entry"]))
+                continue
+            if os.path.basename(package_dir).lower() != str(item["node_id"]).lower():
+                errors.append("%s: package folder must be named after node_id" % os.path.basename(path))
+                continue
 
+            info = read_node_info(entry_path)
+            if info:
+                info_id = info.get("node_id") or info.get("id")
+                if info_id and node_id_value(info_id) != node_value:
+                    errors.append("%s: NODE_INFO.node_id does not match catalog node_id" % os.path.basename(path))
+                    continue
+                if info.get("node") and info.get("node") != item["node_name"]:
+                    errors.append("%s: NODE_INFO.node does not match node_name" % os.path.basename(path))
+                    continue
+                if info.get("version") and str(info.get("version")) != str(item["version"]):
+                    print("warning: %s: NODE_INFO.version %s != catalog version %s" % (
+                        os.path.basename(path), info.get("version"), item["version"]))
+
+        item["subpath"] = subpath
         item["github"] = "https://github.com/%s" % item["repo"]
         item["maya_versions"] = item.get("maya_versions") or []
         item["tags"] = item.get("tags") or []
