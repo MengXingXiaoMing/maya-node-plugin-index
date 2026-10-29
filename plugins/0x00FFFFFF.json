@@ -1,0 +1,17 @@
+{
+  "name": "自动合并测试",
+  "description": "CI 测试条目，用于验证自动校验会拒绝错误节点序号。",
+  "author": "詹康明",
+  "version": "0.0.1",
+  "node_id": "0x00FFFFFF",
+  "node_name": "scrollMarketNode",
+  "category": "workflow",
+  "tags": ["测试"],
+  "repo": "MengXingXiaoMing/maya-node-plugin-index",
+  "subpath": "packages/0x00151502",
+  "entry": "scroll_market_node.py",
+  "branch": "main",
+  "run": "cmds.openScrollMarket()",
+  "maya_versions": ["2025"],
+  "added": "2026-10-29"
+}
