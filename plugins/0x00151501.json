@@ -6,11 +6,22 @@
   "node_id": "0x00151501",
   "node_name": "transformTransfer",
   "category": "rigging",
-  "tags": ["绑定", "动画", "约束"],
+  "tags": [
+    "绑定",
+    "动画",
+    "约束"
+  ],
   "repo": "MengXingXiaoMing/maya-node-plugin-index",
   "subpath": "packages/0x00151501",
   "entry": "transformTransfer.py",
   "branch": "main",
-  "maya_versions": ["2022", "2023", "2024", "2025", "2026"],
-  "added": "2026-10-29"
+  "maya_versions": [
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+  ],
+  "added": "2026-10-29",
+  "updated": "2026-10-29"
 }
