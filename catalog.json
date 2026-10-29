@@ -3,7 +3,7 @@
   "url": "https://github.com/MengXingXiaoMing/maya-node-plugin-index",
   "source": "https://github.com/MengXingXiaoMing/maya-node-plugin-index",
   "updated": "2026-10-29",
-  "count": 6,
+  "count": 7,
   "categories": {
     "rigging": {
       "en": "Rigging",
@@ -112,6 +112,34 @@
       "added": "2026-10-29",
       "updated": "2026-10-29",
       "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
+    },
+    {
+      "name": "裙子毛囊 Rig 生成器",
+      "description": "按骨骼位置批量生成裙子的毛囊驱动 Rig：面片合并+自动投影 UV、毛囊采样、两层空组、方块/圆双控制器并自动约束骨骼。",
+      "author": "禾洛",
+      "version": "1.0.0",
+      "node_id": "0x00151503",
+      "node_name": "skirtFolRig",
+      "category": "rigging",
+      "tags": [
+        "绑定",
+        "裙子",
+        "毛囊",
+        "程序化"
+      ],
+      "repo": "sanque11/skirt-fol-rig",
+      "subpath": "nodes/0x00151503",
+      "entry": "skirt_fol_rig.py",
+      "branch": "main",
+      "maya_versions": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "added": "2026-10-29",
+      "updated": "2026-10-29",
+      "github": "https://github.com/sanque11/skirt-fol-rig"
     },
     {
       "name": "魔方绑定",
