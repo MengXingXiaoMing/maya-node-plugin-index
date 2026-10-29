@@ -2,7 +2,7 @@
   "name": "变换传递（解缠绕）",
   "description": "把源物体的变换传递给目标物体，可解缠绕，适合约束替代和批量对齐。",
   "author": "詹康明",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "node_id": "0x00151501",
   "node_name": "transformTransfer",
   "category": "rigging",
@@ -15,7 +15,11 @@
   "entry": "transformTransfer.py",
   "branch": "main",
   "maya_versions": [
-    "2022"
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
   ],
   "added": "2026-10-29",
   "updated": "2026-10-29"
