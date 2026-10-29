@@ -2,8 +2,8 @@
   "name": "maya-node-plugin-index",
   "url": "https://github.com/MengXingXiaoMing/maya-node-plugin-index",
   "source": "https://github.com/MengXingXiaoMing/maya-node-plugin-index",
-  "updated": "2026-10-28",
-  "count": 4,
+  "updated": "2026-10-29",
+  "count": 5,
   "categories": {
     "rigging": {
       "en": "Rigging",
@@ -111,6 +111,33 @@
       ],
       "added": "2026-10-29",
       "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-index"
+    },
+    {
+      "name": "示例：最小节点插件",
+      "description": "只注册一个空节点，用来演示插件市场的节点格式、条目写法与自动合并流程。",
+      "author": "詹康明",
+      "version": "1.0.0",
+      "node_id": "0x00A10B01",
+      "node_name": "marketSampleNode",
+      "category": "utility",
+      "tags": [
+        "示例",
+        "模板"
+      ],
+      "repo": "MengXingXiaoMing/maya-node-plugin-sample",
+      "subpath": "",
+      "entry": "sample_node.py",
+      "branch": "main",
+      "run": "cmds.createNode('marketSampleNode')",
+      "maya_versions": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "added": "2026-10-29",
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-sample"
     },
     {
       "name": "通用附着版卷轴",
