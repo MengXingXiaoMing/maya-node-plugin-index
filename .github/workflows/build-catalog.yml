@@ -1,0 +1,43 @@
+name: build-catalog
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "plugins/**"
+      - "categories.json"
+      - "scripts/build_catalog.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-catalog
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Rebuild catalog
+        run: |
+          git pull --rebase origin main
+          python scripts/build_catalog.py
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add catalog.json
+          if git diff --cached --quiet; then
+            echo "catalog up to date"
+            exit 0
+          fi
+          git commit -m "chore: rebuild catalog"
+          git push
