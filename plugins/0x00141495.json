@@ -1,0 +1,25 @@
+{
+  "name": "网格转曲面",
+  "description": "把网格的边界或截面转成 NURBS 曲面，方便后续做曲面绑定或放样。",
+  "author": "詹康明",
+  "version": "1.0.0",
+  "node_id": "0x00141495",
+  "node_name": "meshToSurface",
+  "category": "modeling",
+  "tags": [
+    "建模",
+    "曲面"
+  ],
+  "repo": "MengXingXiaoMing/maya-node-plugin-market",
+  "subpath": "nodes/0x00141495",
+  "entry": "meshToSurface.py",
+  "branch": "main",
+  "maya_versions": [
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+  ],
+  "added": "2026-10-29"
+}
