@@ -55,3 +55,23 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: gh pr merge "$PR_NUMBER" --squash
+
+      # 用 GITHUB_TOKEN 合并产生的 push 不会触发 build-catalog workflow，
+      # 所以在同一个 job 里直接把 catalog.json 重建并提交。
+      - name: Rebuild catalog
+        if: success()
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+        run: |
+          git fetch origin "$BASE_REF"
+          git checkout -B "$BASE_REF" "origin/$BASE_REF"
+          python scripts/build_catalog.py
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add catalog.json
+          if git diff --cached --quiet; then
+            echo "catalog up to date"
+            exit 0
+          fi
+          git commit -m "chore: rebuild catalog"
+          git push origin "HEAD:$BASE_REF"
