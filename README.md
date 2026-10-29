@@ -23,7 +23,7 @@ catalog.json                市场读取的构建产物
 有两种方式，推荐第一种，因为索引仓库不会随着插件变多而变成巨型仓库：
 
 - **作者仓库托管（推荐）**：`repo` 填你自己的 GitHub 仓库，`subpath` 指向仓库里的插件目录（可以为空）。索引仓库只存一条 JSON。
-- **索引仓库托管**：把插件文件夹放进 `packages/<node_id>/`，`subpath` 填 `packages/<node_id>`，`repo` 填 `MengXingXiaoMing/maya-node-plugin-index`。当前 4 个示例用这种方式，方便直接演示。
+- **索引仓库托管**：把插件文件夹放进 `packages/<node_id>/`，`subpath` 填 `packages/<node_id>`，`repo` 填 `MengXingXiaoMing/maya-node-plugin-index`。当前 4 个示例用这种方式，方便直接演示；这种模式需要人工审核，不参与自动合并。
 
 在 `plugins/` 下新建 `<node_id>.json`：
 
@@ -61,6 +61,20 @@ python scripts/build_catalog.py
 - 分类是否存在于 `categories.json`
 
 合并后重新运行构建脚本（或配置 GitHub Actions）生成 `catalog.json`，市场下一次刷新即可看到。
+
+## 自动合并规则
+
+`plugins/*.json` 的 PR 会触发自动校验，通过后直接 squash 合并，不需要人工审核：
+
+- 一个 PR 最多 3 个条目，只允许新增 / 修改 `plugins/<node_id>.json`。
+- `repo` 必须是 **PR 作者自己的公开仓库**，且仓库未归档。
+- `node_id` 必须和文件名一致，且在索引里唯一。
+- 市场会读取作者仓库里的 `entry` 文件，要求 `NODE_INFO` 的 `node_id`、`node`、`version` 与条目一致。
+- 分类必须在 `categories.json` 里，标签和 Maya 版本必须是数组。
+- 修改 `packages/`、`.github/`、`scripts/`、`README.md`、`catalog.json` 等文件的 PR 不自动合并，需要人工处理。
+- 校验失败会在 PR 里留言并保留 PR，不会合并。
+
+自动合并只解决“元数据可信 + 能下载”的问题，不保证插件代码安全；用户安装第三方插件前仍应确认作者和来源。
 
 ## 字段说明
 
