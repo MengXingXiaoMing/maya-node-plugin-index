@@ -6,12 +6,17 @@
   "node_id": "0x00141488",
   "node_name": "rubikCubeNode",
   "category": "rigging",
-  "tags": ["绑定", "程序化"],
+  "tags": [
+    "绑定",
+    "程序化"
+  ],
   "repo": "MengXingXiaoMing/maya-node-plugin-market",
   "subpath": "nodes/0x00141488",
   "entry": "rubikCube.py",
   "branch": "main",
-  "maya_versions": ["2022", "2023", "2024"],
+  "maya_versions": [
+    "2022"
+  ],
   "added": "2026-10-29",
   "updated": "2026-10-29"
 }
