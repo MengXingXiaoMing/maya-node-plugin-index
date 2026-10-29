@@ -6,12 +6,23 @@
   "node_id": "0x00151502",
   "node_name": "scrollMarketNode",
   "category": "workflow",
-  "tags": ["卷轴", "附着", "窗口"],
-  "repo": "MengXingXiaoMing/maya-node-plugin-index",
-  "subpath": "packages/0x00151502",
+  "tags": [
+    "卷轴",
+    "附着",
+    "窗口"
+  ],
+  "repo": "MengXingXiaoMing/maya-node-plugin-market",
+  "subpath": "nodes/0x00151502",
   "entry": "scroll_market_node.py",
   "branch": "main",
   "run": "cmds.openScrollMarket()",
-  "maya_versions": ["2022", "2023", "2024", "2025", "2026"],
-  "added": "2026-10-29"
+  "maya_versions": [
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+  ],
+  "added": "2026-10-29",
+  "updated": "2026-10-29"
 }
