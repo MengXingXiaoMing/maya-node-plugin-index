@@ -285,6 +285,14 @@ def main():
         if len(tags) > 10 or any(len(tag) > 30 for tag in tags):
             errors.append("%s：tags 最多 10 个，每个不超过 30 字" % filename)
             continue
+        updated = str(data.get("updated") or "")
+        if updated and not re.match(r"^\d{4}-\d{2}-\d{2}$", updated):
+            errors.append("%s：updated 必须是 YYYY-MM-DD" % filename)
+            continue
+        digest = str(data.get("sha256") or "")
+        if digest and not re.match(r"^[0-9a-fA-F]{64}$", digest):
+            errors.append("%s：sha256 必须是 64 位十六进制" % filename)
+            continue
         versions = data.get("maya_versions") or []
         if not isinstance(versions, list):
             errors.append("%s：maya_versions 必须是数组" % filename)

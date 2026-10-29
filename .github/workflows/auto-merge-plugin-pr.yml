@@ -11,9 +11,10 @@ permissions:
   pull-requests: write
   issues: write
 
+# 全局串行：合并和重建 catalog 都用同一个队列，避免两个 PR 同时写 main。
 concurrency:
-  group: auto-merge-${{ github.event.pull_request.number }}
-  cancel-in-progress: true
+  group: index-write
+  cancel-in-progress: false
 
 jobs:
   validate-and-merge:
@@ -49,35 +50,57 @@ jobs:
             gh pr comment "$PR_NUMBER" --body-file validation.md
           fi
 
-      - name: Squash merge
+      # 合并重试：PR 校验期间可能有人先合并了别的条目，导致 main 前进。
+      - name: Squash merge (retry)
         if: success()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: gh pr merge "$PR_NUMBER" --squash
+        run: |
+          for i in 1 2 3; do
+            if gh pr merge "$PR_NUMBER" --squash; then
+              exit 0
+            fi
+            echo "merge attempt $i failed, retry in 5s"
+            sleep 5
+          done
+          exit 1
 
-      # 用 GITHUB_TOKEN 合并产生的 push 不会触发 build-catalog workflow，
-      # 所以在同一个 job 里直接把 catalog.json 重建并提交。
+      # GITHUB_TOKEN 合并产生的 push 不会触发 build-catalog，所以这里直接重建。
       - name: Rebuild catalog
         if: success()
         env:
           BASE_REF: ${{ github.event.pull_request.base.ref }}
         run: |
-          git fetch origin "$BASE_REF"
-          git checkout -B "$BASE_REF" "origin/$BASE_REF"
-          python scripts/build_catalog.py
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add catalog.json
-          if git diff --cached --quiet; then
-            echo "catalog up to date"
-            exit 0
-          fi
-          git commit -m "chore: rebuild catalog"
-          git push origin "HEAD:$BASE_REF"
+          for i in 1 2 3; do
+            git fetch origin "$BASE_REF"
+            git checkout -B "$BASE_REF" "origin/$BASE_REF"
+            python scripts/build_catalog.py || exit 1
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add catalog.json
+            if git diff --cached --quiet; then
+              echo "catalog up to date"
+              exit 0
+            fi
+            git commit -m "chore: rebuild catalog"
+            if git push origin "HEAD:$BASE_REF"; then
+              exit 0
+            fi
+            echo "push attempt $i failed, retry in 5s"
+            sleep 5
+          done
+          exit 1
 
-      # jsDelivr 会缓存 @main 分支的内容，主动清一下，市场才能立刻拿到新目录。
       - name: Purge jsDelivr cache
         if: success()
         run: |
           curl -fsS "https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@main/catalog.json" || true
+
+      - name: Comment merge result
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          gh pr comment "$PR_NUMBER" --body "已自动合并，\`catalog.json\` 已重建，缓存已刷新。市场刷新「在线」页即可看到。"

@@ -1,23 +1,17 @@
 {
   "name": "变换传递（解缠绕）",
-  "description": "把源对象的位移/旋转实时传递到目标对象，并对欧拉角做解缠绕，累加旋转不会在 180° 翻转。",
+  "description": "把源物体的变换传递给目标物体，可解缠绕，适合约束替代和批量对齐。",
   "author": "詹康明",
   "version": "1.0.0",
   "node_id": "0x00151501",
   "node_name": "transformTransfer",
   "category": "rigging",
-  "tags": [
-    "绑定",
-    "动画",
-    "约束"
-  ],
-  "repo": "MengXingXiaoMing/maya-node-plugin-index",
-  "subpath": "packages/0x00151501",
+  "tags": ["变换", "传递"],
+  "repo": "MengXingXiaoMing/maya-node-plugin-market",
+  "subpath": "nodes/0x00151501",
   "entry": "transformTransfer.py",
   "branch": "main",
-  "maya_versions": [
-    "2022"
-  ],
+  "maya_versions": ["2022", "2023", "2024"],
   "added": "2026-10-29",
   "updated": "2026-10-29"
 }

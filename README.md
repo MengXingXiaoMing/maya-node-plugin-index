@@ -12,18 +12,18 @@ Maya 节点插件市场的公共索引，作者：**詹康明 (Kangming Zhan)**�
 
 ```text
 plugins/0x00141488.json     一个插件一个条目
-packages/0x00141488/        插件包（安装时复制到 nodes/<node_id>/）
 categories.json             分类 id -> 中英文名称
 scripts/build_catalog.py    把 plugins/*.json 合成 catalog.json
 catalog.json                市场读取的构建产物
+version.json                市场客户端用来判断有没有新版本
 ```
 
 ## 添加一个插件
 
-有两种方式，推荐第一种，因为索引仓库不会随着插件变多而变成巨型仓库：
+插件代码统一放在**作者自己的公开仓库**，索引仓库只存一条 JSON 元数据：
 
-- **作者仓库托管（推荐）**：`repo` 填你自己的 GitHub 仓库，`subpath` 指向仓库里的插件目录（可以为空）。索引仓库只存一条 JSON。
-- **索引仓库托管**：把插件文件夹放进 `packages/<node_id>/`，`subpath` 填 `packages/<node_id>`，`repo` 填 `MengXingXiaoMing/maya-node-plugin-index`。当前 4 个种子插件用这种方式，由维护者手动添加；这种模式需要人工审核，**不参与自动合并**。
+- `repo` 填你自己的仓库，`subpath` 指向仓库里的插件目录（可以为空）。
+- 索引仓库不再托管插件代码（历史 `packages/` 已迁到市场仓库 `nodes/`）。
 
 ### 贡献者三步
 
@@ -34,8 +34,8 @@ catalog.json                市场读取的构建产物
 3. 开 PR。GitHub Actions 自动校验，通过后直接 squash 合并，并自动重建 `catalog.json`，
    不需要等人工审核；市场刷新「在线」页就能看到。
 
-只改 `plugins/*.json` 的 PR 才会自动合并；动 `packages/`、`scripts/`、`.github/`、
-`catalog.json` 的 PR 需要人工处理。
+只改 `plugins/*.json` 的 PR 才会自动合并；动 `scripts/`、`.github/`、`catalog.json`
+的 PR 需要人工处理。
 
 在 `plugins/` 下新建 `<node_id>.json`：
 
@@ -50,11 +50,12 @@ catalog.json                市场读取的构建产物
   "category": "rigging",
   "tags": ["绑定", "程序化"],
   "repo": "owner/repo",
-  "subpath": "packages/0x00141488",
+  "subpath": "nodes/0x00141488",
   "entry": "rubikCube.py",
   "branch": "main",
   "maya_versions": ["2022", "2023", "2024", "2025", "2026"],
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "updated": "2026-10-29"
 }
 ```
 
@@ -83,7 +84,9 @@ python scripts/build_catalog.py
 - `node_id` 必须和文件名一致，且在索引里唯一。
 - 市场会读取作者仓库里的 `entry` 文件，要求 `NODE_INFO` 的 `node_id`、`node`、`version` 与条目一致。
 - 分类必须在 `categories.json` 里，标签和 Maya 版本必须是数组。
-- 修改 `packages/`、`.github/`、`scripts/`、`README.md`、`catalog.json` 等文件的 PR 不自动合并，需要人工处理。
+- 修改 `.github/`、`scripts/`、`README.md`、`catalog.json` 等文件的 PR 不自动合并，需要人工处理。
+- `updated` 必须是 `YYYY-MM-DD`；如果填了 `sha256`，必须是 64 位十六进制。
+- PR 全局串行处理，合并后立即重建 `catalog.json` 并清理 jsDelivr 缓存，最后在 PR 里留言告知结果。
 - 校验失败会在 PR 里留言并保留 PR，不会合并。
 
 自动合并依赖仓库的 GitHub Actions（`.github/workflows/auto-merge-plugin-pr.yml`）。它使用 `pull_request_target`，只通过 API 读取 PR 里的 JSON，不会执行 PR 代码。
@@ -107,6 +110,8 @@ python scripts/build_catalog.py
 | `entry` | 注册节点的 `.py` 文件（相对 `subpath`） |
 | `branch` | 下载分支，默认 `main` |
 | `maya_versions` | 兼容的 Maya 版本 |
+| `updated` | 最近更新时间，`YYYY-MM-DD`，市场在线页会显示 |
+| `sha256` | 可选，插件发布包的摘要，安装时会校验 |
 | `icon` | 可选，GitHub 上可直接访问的图片 URL |
 
 ## 安装方式
