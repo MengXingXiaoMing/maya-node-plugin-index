@@ -200,7 +200,7 @@
       "name": "通用附着版卷轴",
       "description": "打开通用附着版卷轴窗口；每次运行会卸载并重新加载插件和窗口模块，改完脚本不用重启 Maya。",
       "author": "詹康明",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "node_id": "0x00151502",
       "node_name": "scrollMarketNode",
       "category": "workflow",
