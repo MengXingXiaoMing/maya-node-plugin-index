@@ -88,7 +88,7 @@
       "name": "样条 IK",
       "description": "用一条 NURBS 曲线驱动骨骼链的样条 IK 节点，支持采样密度、偏移和半径控制。",
       "author": "詹康明",
-      "version": "1.0",
+      "version": "1.0.0",
       "node_id": "0x00141486",
       "node_name": "simpleSplineIK",
       "category": "rigging",
@@ -97,8 +97,8 @@
         "IK",
         "曲线"
       ],
-      "repo": "MengXingXiaoMing/maya-node-plugin-index",
-      "subpath": "packages/0x00141486",
+      "repo": "MengXingXiaoMing/maya-node-plugin-market",
+      "subpath": "nodes/0x00141486",
       "entry": "selfIK.py",
       "branch": "main",
       "maya_versions": [
@@ -109,7 +109,8 @@
         "2026"
       ],
       "added": "2026-10-29",
-      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-index"
+      "updated": "2026-10-29",
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
     },
     {
       "name": "样条 IK 1",
@@ -135,6 +136,7 @@
         "2026"
       ],
       "added": "2026-10-29",
+      "updated": "2026-10-29",
       "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
     },
     {
@@ -214,6 +216,7 @@
         "2026"
       ],
       "added": "2026-10-29",
+      "updated": "2026-10-29",
       "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-index"
     },
     {
