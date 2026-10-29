@@ -2,7 +2,7 @@
   "name": "魔方绑定",
   "description": "程序化生成任意尺寸的魔方绑定，支持自定义格数与间距。",
   "author": "詹康明",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "node_id": "0x00141488",
   "node_name": "rubikCubeNode",
   "category": "rigging",
@@ -15,7 +15,11 @@
   "entry": "rubikCube.py",
   "branch": "main",
   "maya_versions": [
-    "2022"
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
   ],
   "added": "2026-10-29",
   "updated": "2026-10-29"
