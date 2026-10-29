@@ -55,6 +55,7 @@
         "2026"
       ],
       "added": "2026-10-29",
+      "updated": "2026-10-29",
       "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
     },
     {
@@ -82,6 +83,7 @@
         "2026"
       ],
       "added": "2026-10-29",
+      "updated": "2026-10-29",
       "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-index"
     },
     {
@@ -163,6 +165,7 @@
         "2026"
       ],
       "added": "2026-10-29",
+      "updated": "2026-10-29",
       "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
     },
     {
@@ -189,6 +192,7 @@
         "2026"
       ],
       "added": "2026-10-29",
+      "updated": "2026-10-29",
       "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
     },
     {
@@ -244,6 +248,7 @@
         "2026"
       ],
       "added": "2026-10-29",
+      "updated": "2026-10-29",
       "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-sample"
     },
     {
@@ -259,8 +264,8 @@
         "附着",
         "窗口"
       ],
-      "repo": "MengXingXiaoMing/maya-node-plugin-index",
-      "subpath": "packages/0x00151502",
+      "repo": "MengXingXiaoMing/maya-node-plugin-market",
+      "subpath": "nodes/0x00151502",
       "entry": "scroll_market_node.py",
       "branch": "main",
       "run": "cmds.openScrollMarket()",
@@ -272,7 +277,8 @@
         "2026"
       ],
       "added": "2026-10-29",
-      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-index"
+      "updated": "2026-10-29",
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
     }
   ]
 }
