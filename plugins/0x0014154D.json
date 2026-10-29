@@ -1,0 +1,25 @@
+{
+  "name": "样条 IK 2",
+  "description": "真样条 IK：沿曲线重新采样并计算关节位置，曲线移动时骨骼跟随。",
+  "author": "詹康明",
+  "version": "1.0.0",
+  "node_id": "0x0014154D",
+  "node_name": "trueSplineIK",
+  "category": "rigging",
+  "tags": [
+    "样条",
+    "IK"
+  ],
+  "repo": "MengXingXiaoMing/maya-node-plugin-market",
+  "subpath": "nodes/0x0014154D",
+  "entry": "selfIK_2.py",
+  "branch": "main",
+  "maya_versions": [
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+  ],
+  "added": "2026-10-29"
+}
