@@ -6,12 +6,22 @@
   "node_id": "0x00A10B01",
   "node_name": "marketSampleNode",
   "category": "utility",
-  "tags": ["示例", "模板"],
+  "tags": [
+    "示例",
+    "模板"
+  ],
   "repo": "MengXingXiaoMing/maya-node-plugin-sample",
   "subpath": "",
   "entry": "sample_node.py",
   "branch": "main",
   "run": "cmds.createNode('marketSampleNode')",
-  "maya_versions": ["2022", "2023", "2024", "2025", "2026"],
-  "added": "2026-10-29"
+  "maya_versions": [
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+  ],
+  "added": "2026-10-29",
+  "updated": "2026-10-29"
 }
