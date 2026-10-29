@@ -23,7 +23,19 @@ catalog.json                市场读取的构建产物
 有两种方式，推荐第一种，因为索引仓库不会随着插件变多而变成巨型仓库：
 
 - **作者仓库托管（推荐）**：`repo` 填你自己的 GitHub 仓库，`subpath` 指向仓库里的插件目录（可以为空）。索引仓库只存一条 JSON。
-- **索引仓库托管**：把插件文件夹放进 `packages/<node_id>/`，`subpath` 填 `packages/<node_id>`，`repo` 填 `MengXingXiaoMing/maya-node-plugin-index`。当前 4 个示例用这种方式，方便直接演示；这种模式需要人工审核，不参与自动合并。
+- **索引仓库托管**：把插件文件夹放进 `packages/<node_id>/`，`subpath` 填 `packages/<node_id>`，`repo` 填 `MengXingXiaoMing/maya-node-plugin-index`。当前 4 个种子插件用这种方式，由维护者手动添加；这种模式需要人工审核，**不参与自动合并**。
+
+### 贡献者三步
+
+1. 把插件放到**你自己的公开仓库**（可以直接抄
+   [maya-node-plugin-sample](https://github.com/MengXingXiaoMing/maya-node-plugin-sample)）。
+   入口 `.py` 里写 `NODE_INFO`，节点的 `node_id` / `node` / `version` 要和条目一致。
+2. Fork 本仓库，新建 `plugins/<node_id>.json`，`repo` 填你的仓库。
+3. 开 PR。GitHub Actions 自动校验，通过后直接 squash 合并，并自动重建 `catalog.json`，
+   不需要等人工审核；市场刷新「在线」页就能看到。
+
+只改 `plugins/*.json` 的 PR 才会自动合并；动 `packages/`、`scripts/`、`.github/`、
+`catalog.json` 的 PR 需要人工处理。
 
 在 `plugins/` 下新建 `<node_id>.json`：
 
@@ -60,7 +72,7 @@ python scripts/build_catalog.py
 - `NODE_INFO` 的 `node` / `node_id` 是否和条目一致
 - 分类是否存在于 `categories.json`
 
-合并后重新运行构建脚本（或配置 GitHub Actions）生成 `catalog.json`，市场下一次刷新即可看到。
+合并后 GitHub Actions 会自动重建 `catalog.json`（`auto-merge-plugin-pr` 合并完立即重建，`build-catalog` 也支持手动 `workflow_dispatch`），市场下一次刷新「在线」页即可看到。
 
 ## 自动合并规则
 
@@ -74,7 +86,7 @@ python scripts/build_catalog.py
 - 修改 `packages/`、`.github/`、`scripts/`、`README.md`、`catalog.json` 等文件的 PR 不自动合并，需要人工处理。
 - 校验失败会在 PR 里留言并保留 PR，不会合并。
 
-自动合并依赖仓库的 GitHub Actions；如果 Actions 未启用或 workflow 不存在，PR 会保持打开等待处理。
+自动合并依赖仓库的 GitHub Actions（`.github/workflows/auto-merge-plugin-pr.yml`）。它使用 `pull_request_target`，只通过 API 读取 PR 里的 JSON，不会执行 PR 代码。
 
 自动合并只解决“元数据可信 + 能下载”的问题，不保证插件代码安全；用户安装第三方插件前仍应确认作者和来源。
 
