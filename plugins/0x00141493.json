@@ -1,0 +1,25 @@
+{
+  "name": "样条 IK 1",
+  "description": "分层样条 IK：按层级采样曲线，生成骨骼矩阵输出，适合长链 FK 转 IK。",
+  "author": "詹康明",
+  "version": "1.0.0",
+  "node_id": "0x00141493",
+  "node_name": "hierarchicalSplineIK",
+  "category": "rigging",
+  "tags": [
+    "样条",
+    "IK"
+  ],
+  "repo": "MengXingXiaoMing/maya-node-plugin-market",
+  "subpath": "nodes/0x00141493",
+  "entry": "selfIK_1.py",
+  "branch": "main",
+  "maya_versions": [
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+  ],
+  "added": "2026-10-29"
+}
