@@ -3,7 +3,7 @@
   "url": "https://github.com/MengXingXiaoMing/maya-node-plugin-index",
   "source": "https://github.com/MengXingXiaoMing/maya-node-plugin-index",
   "updated": "2026-10-29",
-  "count": 5,
+  "count": 9,
   "categories": {
     "rigging": {
       "en": "Rigging",
@@ -31,6 +31,32 @@
     }
   },
   "plugins": [
+    {
+      "name": "网格转曲面",
+      "description": "把网格的边界或截面转成 NURBS 曲面，方便后续做曲面绑定或放样。",
+      "author": "詹康明",
+      "version": "1.0.0",
+      "node_id": "0x00141495",
+      "node_name": "meshToSurface",
+      "category": "modeling",
+      "tags": [
+        "建模",
+        "曲面"
+      ],
+      "repo": "MengXingXiaoMing/maya-node-plugin-market",
+      "subpath": "nodes/0x00141495",
+      "entry": "meshToSurface.py",
+      "branch": "main",
+      "maya_versions": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "added": "2026-10-29",
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
+    },
     {
       "name": "变换传递（解缠绕）",
       "description": "把源对象的位移/旋转实时传递到目标对象，并对欧拉角做解缠绕，累加旋转不会在 180° 翻转。",
@@ -84,6 +110,84 @@
       ],
       "added": "2026-10-29",
       "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-index"
+    },
+    {
+      "name": "样条 IK 1",
+      "description": "分层样条 IK：按层级采样曲线，生成骨骼矩阵输出，适合长链 FK 转 IK。",
+      "author": "詹康明",
+      "version": "1.0.0",
+      "node_id": "0x00141493",
+      "node_name": "hierarchicalSplineIK",
+      "category": "rigging",
+      "tags": [
+        "样条",
+        "IK"
+      ],
+      "repo": "MengXingXiaoMing/maya-node-plugin-market",
+      "subpath": "nodes/0x00141493",
+      "entry": "selfIK_1.py",
+      "branch": "main",
+      "maya_versions": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "added": "2026-10-29",
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
+    },
+    {
+      "name": "样条 IK 2",
+      "description": "真样条 IK：沿曲线重新采样并计算关节位置，曲线移动时骨骼跟随。",
+      "author": "詹康明",
+      "version": "1.0.0",
+      "node_id": "0x0014154D",
+      "node_name": "trueSplineIK",
+      "category": "rigging",
+      "tags": [
+        "样条",
+        "IK"
+      ],
+      "repo": "MengXingXiaoMing/maya-node-plugin-market",
+      "subpath": "nodes/0x0014154D",
+      "entry": "selfIK_2.py",
+      "branch": "main",
+      "maya_versions": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "added": "2026-10-29",
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
+    },
+    {
+      "name": "样条 IK 5",
+      "description": "简版样条 IK：只输出关节矩阵，参数少、计算轻，适合快速搭链。",
+      "author": "詹康明",
+      "version": "1.0.0",
+      "node_id": "0x001414A3",
+      "node_name": "simpleSplineIK",
+      "category": "rigging",
+      "tags": [
+        "样条",
+        "IK"
+      ],
+      "repo": "MengXingXiaoMing/maya-node-plugin-market",
+      "subpath": "nodes/0x001414A3",
+      "entry": "selfIK_5.py",
+      "branch": "main",
+      "maya_versions": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "added": "2026-10-29",
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
     },
     {
       "name": "魔方绑定",
