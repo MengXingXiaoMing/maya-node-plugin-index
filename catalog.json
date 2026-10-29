@@ -3,7 +3,7 @@
   "url": "https://github.com/MengXingXiaoMing/maya-node-plugin-index",
   "source": "https://github.com/MengXingXiaoMing/maya-node-plugin-index",
   "updated": "2026-10-29",
-  "count": 9,
+  "count": 6,
   "categories": {
     "rigging": {
       "en": "Rigging",
@@ -60,27 +60,28 @@
     },
     {
       "name": "变换传递（解缠绕）",
-      "description": "把源对象的位移/旋转实时传递到目标对象，并对欧拉角做解缠绕，累加旋转不会在 180° 翻转。",
+      "description": "把源物体的变换传递给目标物体，可解缠绕，适合约束替代和批量对齐。",
       "author": "詹康明",
       "version": "1.0.0",
       "node_id": "0x00151501",
       "node_name": "transformTransfer",
       "category": "rigging",
       "tags": [
-        "绑定",
-        "动画",
-        "约束"
+        "变换",
+        "传递"
       ],
-      "repo": "MengXingXiaoMing/maya-node-plugin-index",
-      "subpath": "packages/0x00151501",
+      "repo": "MengXingXiaoMing/maya-node-plugin-market",
+      "subpath": "nodes/0x00151501",
       "entry": "transformTransfer.py",
       "branch": "main",
       "maya_versions": [
-        "2022"
+        "2022",
+        "2023",
+        "2024"
       ],
       "added": "2026-10-29",
       "updated": "2026-10-29",
-      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-index"
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
     },
     {
       "name": "样条 IK",
@@ -111,89 +112,8 @@
       "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
     },
     {
-      "name": "样条 IK 1",
-      "description": "分层样条 IK：按层级采样曲线，生成骨骼矩阵输出，适合长链 FK 转 IK。",
-      "author": "詹康明",
-      "version": "1.0.0",
-      "node_id": "0x00141493",
-      "node_name": "hierarchicalSplineIK",
-      "category": "rigging",
-      "tags": [
-        "样条",
-        "IK"
-      ],
-      "repo": "MengXingXiaoMing/maya-node-plugin-market",
-      "subpath": "nodes/0x00141493",
-      "entry": "selfIK_1.py",
-      "branch": "main",
-      "maya_versions": [
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
-      ],
-      "added": "2026-10-29",
-      "updated": "2026-10-29",
-      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
-    },
-    {
-      "name": "样条 IK 2",
-      "description": "真样条 IK：沿曲线重新采样并计算关节位置，曲线移动时骨骼跟随。",
-      "author": "詹康明",
-      "version": "1.0.0",
-      "node_id": "0x0014154D",
-      "node_name": "trueSplineIK",
-      "category": "rigging",
-      "tags": [
-        "样条",
-        "IK"
-      ],
-      "repo": "MengXingXiaoMing/maya-node-plugin-market",
-      "subpath": "nodes/0x0014154D",
-      "entry": "selfIK_2.py",
-      "branch": "main",
-      "maya_versions": [
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
-      ],
-      "added": "2026-10-29",
-      "updated": "2026-10-29",
-      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
-    },
-    {
-      "name": "样条 IK 5",
-      "description": "简版样条 IK：只输出关节矩阵，参数少、计算轻，适合快速搭链。",
-      "author": "詹康明",
-      "version": "1.0.0",
-      "node_id": "0x001414A3",
-      "node_name": "simpleSplineIK",
-      "category": "rigging",
-      "tags": [
-        "样条",
-        "IK"
-      ],
-      "repo": "MengXingXiaoMing/maya-node-plugin-market",
-      "subpath": "nodes/0x001414A3",
-      "entry": "selfIK_5.py",
-      "branch": "main",
-      "maya_versions": [
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
-      ],
-      "added": "2026-10-29",
-      "updated": "2026-10-29",
-      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
-    },
-    {
       "name": "魔方绑定",
-      "description": "程序化生成任意尺寸的魔方绑定：每层独立控制器、90° 吸附提交、自动配色。",
+      "description": "程序化生成任意尺寸的魔方绑定，支持自定义格数与间距。",
       "author": "詹康明",
       "version": "2.0.0",
       "node_id": "0x00141488",
@@ -201,26 +121,27 @@
       "category": "rigging",
       "tags": [
         "绑定",
-        "程序化",
-        "魔方"
+        "程序化"
       ],
-      "repo": "MengXingXiaoMing/maya-node-plugin-index",
-      "subpath": "packages/0x00141488",
+      "repo": "MengXingXiaoMing/maya-node-plugin-market",
+      "subpath": "nodes/0x00141488",
       "entry": "rubikCube.py",
       "branch": "main",
       "maya_versions": [
-        "2022"
+        "2022",
+        "2023",
+        "2024"
       ],
       "added": "2026-10-29",
       "updated": "2026-10-29",
-      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-index"
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
     },
     {
       "name": "示例：最小节点插件",
       "description": "只注册一个空节点，用来演示插件市场的节点格式、条目写法与自动合并流程。",
       "author": "詹康明",
       "version": "1.1.0",
-      "node_id": "0x00A10B01",
+      "node_id": "0x001414BF",
       "node_name": "marketSampleNode",
       "category": "utility",
       "tags": [
