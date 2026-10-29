@@ -13,7 +13,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: build-catalog
+  group: index-write
   cancel-in-progress: false
 
 jobs:
