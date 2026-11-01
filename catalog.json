@@ -1,265 +1,294 @@
 {
-    "name": "maya-node-plugin-index",
-    "url": "https://github.com/MengXingXiaoMing/maya-node-plugin-index",
-    "source": "https://github.com/MengXingXiaoMing/maya-node-plugin-index",
-    "updated": "2026-11-01",
-    "count": 8,
-    "categories": {
-        "rigging": {
-            "en": "Rigging",
-            "zh": "绑定"
-        },
-        "workflow": {
-            "en": "Workflow",
-            "zh": "工作流"
-        },
-        "window": {
-            "en": "Windows & UI",
-            "zh": "窗口与界面"
-        },
-        "animation": {
-            "en": "Animation",
-            "zh": "动画"
-        },
-        "modeling": {
-            "en": "Modeling",
-            "zh": "建模"
-        },
-        "utility": {
-            "en": "Utilities",
-            "zh": "实用工具"
-        },
-        "game": {
-            "en": "Games",
-            "zh": "游戏"
-        }
+  "name": "maya-node-plugin-index",
+  "url": "https://github.com/MengXingXiaoMing/maya-node-plugin-index",
+  "source": "https://github.com/MengXingXiaoMing/maya-node-plugin-index",
+  "updated": "2026-11-01",
+  "count": 9,
+  "categories": {
+    "rigging": {
+      "en": "Rigging",
+      "zh": "绑定"
     },
-    "plugins": [
-        {
-            "name": "网格转曲面",
-            "description": "把网格的边界或截面转成 NURBS 曲面，方便后续做曲面绑定或放样。",
-            "author": "詹康明",
-            "version": "1.0.0",
-            "node_id": "0x00141495",
-            "node_name": "meshToSurface",
-            "category": "modeling",
-            "tags": [
-                "建模",
-                "曲面"
-            ],
-            "repo": "MengXingXiaoMing/maya-node-plugin-market",
-            "subpath": "nodes/0x00141495",
-            "entry": "meshToSurface.py",
-            "branch": "main",
-            "maya_versions": [
-                "2022",
-                "2023",
-                "2024",
-                "2025",
-                "2026"
-            ],
-            "added": "2026-10-29",
-            "updated": "2026-10-29",
-            "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
-        },
-        {
-            "name": "变换传递（解缠绕）",
-            "description": "把源物体的变换传递给目标物体，可解缠绕，适合约束替代和批量对齐。",
-            "author": "詹康明",
-            "version": "1.1.0",
-            "node_id": "0x00151501",
-            "node_name": "transformTransfer",
-            "category": "rigging",
-            "tags": [
-                "变换",
-                "传递"
-            ],
-            "repo": "MengXingXiaoMing/maya-node-plugin-market",
-            "subpath": "nodes/0x00151501",
-            "entry": "transformTransfer.py",
-            "branch": "main",
-            "maya_versions": [
-                "2022",
-                "2023",
-                "2024",
-                "2025",
-                "2026"
-            ],
-            "added": "2026-10-29",
-            "updated": "2026-10-29",
-            "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
-        },
-        {
-            "name": "样条 IK",
-            "description": "用一条 NURBS 曲线驱动骨骼链的样条 IK 节点，支持采样密度、偏移和半径控制。",
-            "author": "詹康明",
-            "version": "1.0.0",
-            "node_id": "0x00141486",
-            "node_name": "simpleSplineIK",
-            "category": "rigging",
-            "tags": [
-                "绑定",
-                "IK",
-                "曲线"
-            ],
-            "repo": "MengXingXiaoMing/maya-node-plugin-market",
-            "subpath": "nodes/0x00141486",
-            "entry": "selfIK.py",
-            "branch": "main",
-            "maya_versions": [
-                "2022",
-                "2023",
-                "2024",
-                "2025",
-                "2026"
-            ],
-            "added": "2026-10-29",
-            "updated": "2026-10-29",
-            "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
-        },
-        {
-            "name": "裙子毛囊 Rig 生成器",
-            "description": "按骨骼位置批量生成裙子的毛囊驱动 Rig：面片合并+自动投影 UV、毛囊采样、两层空组、方块/圆双控制器并自动约束骨骼。",
-            "author": "禾洛",
-            "version": "1.0.1",
-            "node_id": "0x00151503",
-            "node_name": "skirtFolRigNode",
-            "category": "rigging",
-            "tags": [
-                "绑定",
-                "裙子",
-                "毛囊",
-                "程序化"
-            ],
-            "repo": "sanque11/skirt-fol-rig",
-            "subpath": "nodes/0x00151503",
-            "entry": "skirt_fol_rig.py",
-            "branch": "main",
-            "maya_versions": [
-                "2018",
-                "2020",
-                "2022",
-                "2023",
-                "2024",
-                "2025"
-            ],
-            "added": "2026-10-29",
-            "updated": "2026-10-29",
-            "github": "https://github.com/sanque11/skirt-fol-rig"
-        },
-        {
-            "name": "魔方绑定",
-            "description": "程序化生成任意尺寸的魔方绑定，支持自定义格数与间距。",
-            "author": "詹康明",
-            "version": "2.1.0",
-            "node_id": "0x00141488",
-            "node_name": "rubikCubeNode",
-            "category": "rigging",
-            "tags": [
-                "绑定",
-                "程序化"
-            ],
-            "repo": "MengXingXiaoMing/maya-node-plugin-market",
-            "subpath": "nodes/0x00141488",
-            "entry": "rubikCube.py",
-            "branch": "main",
-            "maya_versions": [
-                "2022",
-                "2023",
-                "2024",
-                "2025",
-                "2026"
-            ],
-            "added": "2026-10-29",
-            "updated": "2026-10-29",
-            "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
-        },
-        {
-            "name": "示例：最小节点插件",
-            "description": "只注册一个空节点，用来演示插件市场的节点格式、条目写法与自动合并流程。",
-            "author": "詹康明",
-            "version": "1.2.0",
-            "node_id": "0x001414BF",
-            "node_name": "marketSampleNode",
-            "category": "utility",
-            "tags": [
-                "示例",
-                "模板"
-            ],
-            "repo": "MengXingXiaoMing/maya-node-plugin-sample",
-            "subpath": "",
-            "entry": "sample_node.py",
-            "branch": "main",
-            "run": "cmds.createNode('marketSampleNode')",
-            "maya_versions": [
-                "2022",
-                "2023",
-                "2024",
-                "2025",
-                "2026"
-            ],
-            "added": "2026-10-29",
-            "updated": "2026-10-29",
-            "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-sample"
-        },
-        {
-            "name": "通用附着版卷轴",
-            "description": "打开通用附着版卷轴窗口；每次运行会卸载并重新加载插件和窗口模块，改完脚本不用重启 Maya。",
-            "author": "詹康明",
-            "version": "1.0.1",
-            "node_id": "0x00151502",
-            "node_name": "scrollMarketNode",
-            "category": "workflow",
-            "tags": [
-                "卷轴",
-                "附着",
-                "窗口"
-            ],
-            "repo": "MengXingXiaoMing/maya-node-plugin-market",
-            "subpath": "nodes/0x00151502",
-            "entry": "scroll_market_node.py",
-            "branch": "main",
-            "run": "cmds.openScrollMarket()",
-            "maya_versions": [
-                "2022",
-                "2023",
-                "2024",
-                "2025",
-                "2026"
-            ],
-            "added": "2026-10-29",
-            "updated": "2026-10-29",
-            "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
-        },
-        {
-            "name": "锻剑纳贡",
-            "description": "锻剑纳贡（锻造大师）小游戏：在契约日内锻造兵器、应对敌袭、向城主纳贡。用系统默认浏览器打开本地 HTML5 游戏。",
-            "author": "詹康明",
-            "version": "1.0.0",
-            "node_id": "0x001414A0",
-            "node_name": "forgeMasterNode",
-            "category": "game",
-            "tags": [
-                "游戏",
-                "锻造",
-                "休闲",
-                "锻剑纳贡"
-            ],
-            "repo": "MengXingXiaoMing/maya-node-plugin-market",
-            "subpath": "nodes/0x001414A0",
-            "entry": "forge_master_node.py",
-            "branch": "main",
-            "run": "cmds.openForgeMaster()",
-            "maya_versions": [
-                "2022",
-                "2023",
-                "2024",
-                "2025",
-                "2026"
-            ],
-            "added": "2026-11-01",
-            "updated": "2026-11-01",
-            "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
-        }
-    ]
+    "workflow": {
+      "en": "Workflow",
+      "zh": "工作流"
+    },
+    "window": {
+      "en": "Windows & UI",
+      "zh": "窗口与界面"
+    },
+    "animation": {
+      "en": "Animation",
+      "zh": "动画"
+    },
+    "modeling": {
+      "en": "Modeling",
+      "zh": "建模"
+    },
+    "utility": {
+      "en": "Utilities",
+      "zh": "实用工具"
+    },
+    "game": {
+      "en": "Games",
+      "zh": "游戏"
+    }
+  },
+  "plugins": [
+    {
+      "name": "锻剑纳贡",
+      "description": "锻剑纳贡（锻造大师）小游戏：在契约日内锻造兵器、应对敌袭、向城主纳贡。用系统默认浏览器打开本地 HTML5 游戏。",
+      "author": "詹康明",
+      "version": "1.0.0",
+      "node_id": "0x001414A0",
+      "node_name": "forgeMasterNode",
+      "category": "game",
+      "tags": [
+        "游戏",
+        "锻造",
+        "休闲",
+        "锻剑纳贡"
+      ],
+      "repo": "MengXingXiaoMing/maya-node-plugin-market",
+      "subpath": "nodes/0x001414A0",
+      "entry": "forge_master_node.py",
+      "branch": "main",
+      "run": "cmds.openForgeMaster()",
+      "maya_versions": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "added": "2026-11-01",
+      "updated": "2026-11-01",
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
+    },
+    {
+      "name": "网格转曲面",
+      "description": "把网格的边界或截面转成 NURBS 曲面，方便后续做曲面绑定或放样。",
+      "author": "詹康明",
+      "version": "1.0.0",
+      "node_id": "0x00141495",
+      "node_name": "meshToSurface",
+      "category": "modeling",
+      "tags": [
+        "建模",
+        "曲面"
+      ],
+      "repo": "MengXingXiaoMing/maya-node-plugin-market",
+      "subpath": "nodes/0x00141495",
+      "entry": "meshToSurface.py",
+      "branch": "main",
+      "maya_versions": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "added": "2026-10-29",
+      "updated": "2026-10-29",
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
+    },
+    {
+      "name": "变换传递（解缠绕）",
+      "description": "把源物体的变换传递给目标物体，可解缠绕，适合约束替代和批量对齐。",
+      "author": "詹康明",
+      "version": "1.1.0",
+      "node_id": "0x00151501",
+      "node_name": "transformTransfer",
+      "category": "rigging",
+      "tags": [
+        "变换",
+        "传递"
+      ],
+      "repo": "MengXingXiaoMing/maya-node-plugin-market",
+      "subpath": "nodes/0x00151501",
+      "entry": "transformTransfer.py",
+      "branch": "main",
+      "maya_versions": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "added": "2026-10-29",
+      "updated": "2026-10-29",
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
+    },
+    {
+      "name": "样条 IK",
+      "description": "用一条 NURBS 曲线驱动骨骼链的样条 IK 节点，支持采样密度、偏移和半径控制。",
+      "author": "詹康明",
+      "version": "1.0.0",
+      "node_id": "0x00141486",
+      "node_name": "simpleSplineIK",
+      "category": "rigging",
+      "tags": [
+        "绑定",
+        "IK",
+        "曲线"
+      ],
+      "repo": "MengXingXiaoMing/maya-node-plugin-market",
+      "subpath": "nodes/0x00141486",
+      "entry": "selfIK.py",
+      "branch": "main",
+      "maya_versions": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "added": "2026-10-29",
+      "updated": "2026-10-29",
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
+    },
+    {
+      "name": "裙子毛囊 Rig 生成器",
+      "description": "按骨骼位置批量生成裙子的毛囊驱动 Rig：面片合并+自动投影 UV、毛囊采样、两层空组、方块/圆双控制器并自动约束骨骼。",
+      "author": "禾洛",
+      "version": "1.0.1",
+      "node_id": "0x00151503",
+      "node_name": "skirtFolRigNode",
+      "category": "rigging",
+      "tags": [
+        "绑定",
+        "裙子",
+        "毛囊",
+        "程序化"
+      ],
+      "repo": "sanque11/skirt-fol-rig",
+      "subpath": "nodes/0x00151503",
+      "entry": "skirt_fol_rig.py",
+      "branch": "main",
+      "maya_versions": [
+        "2018",
+        "2020",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "added": "2026-10-29",
+      "updated": "2026-10-29",
+      "github": "https://github.com/sanque11/skirt-fol-rig"
+    },
+    {
+      "name": "魔方绑定",
+      "description": "程序化生成任意尺寸的魔方绑定，支持自定义格数与间距。",
+      "author": "詹康明",
+      "version": "2.1.0",
+      "node_id": "0x00141488",
+      "node_name": "rubikCubeNode",
+      "category": "rigging",
+      "tags": [
+        "绑定",
+        "程序化"
+      ],
+      "repo": "MengXingXiaoMing/maya-node-plugin-market",
+      "subpath": "nodes/0x00141488",
+      "entry": "rubikCube.py",
+      "branch": "main",
+      "maya_versions": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "added": "2026-10-29",
+      "updated": "2026-10-29",
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
+    },
+    {
+      "name": "梦星截屏",
+      "description": "启动梦星截屏（录屏与离线翻译）。以独立进程运行，不占 Maya；软件已做单实例，重复运行会把已有窗口叫到前台。",
+      "author": "詹康明",
+      "version": "1.0.0",
+      "node_id": "0x00141496",
+      "node_name": "screenRecordingNode",
+      "category": "utility",
+      "tags": [
+        "截屏",
+        "录屏",
+        "工具"
+      ],
+      "repo": "MengXingXiaoMing/maya-node-plugin-market",
+      "subpath": "nodes/0x00141496",
+      "entry": "screen_recording_node.py",
+      "branch": "main",
+      "run": "cmds.openScreenRecording()",
+      "maya_versions": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "added": "2026-11-01",
+      "updated": "2026-11-01",
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
+    },
+    {
+      "name": "示例：最小节点插件",
+      "description": "只注册一个空节点，用来演示插件市场的节点格式、条目写法与自动合并流程。",
+      "author": "詹康明",
+      "version": "1.2.0",
+      "node_id": "0x001414BF",
+      "node_name": "marketSampleNode",
+      "category": "utility",
+      "tags": [
+        "示例",
+        "模板"
+      ],
+      "repo": "MengXingXiaoMing/maya-node-plugin-sample",
+      "subpath": "",
+      "entry": "sample_node.py",
+      "branch": "main",
+      "run": "cmds.createNode('marketSampleNode')",
+      "maya_versions": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "added": "2026-10-29",
+      "updated": "2026-10-29",
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-sample"
+    },
+    {
+      "name": "通用附着版卷轴",
+      "description": "打开通用附着版卷轴窗口；每次运行会卸载并重新加载插件和窗口模块，改完脚本不用重启 Maya。",
+      "author": "詹康明",
+      "version": "1.0.1",
+      "node_id": "0x00151502",
+      "node_name": "scrollMarketNode",
+      "category": "workflow",
+      "tags": [
+        "卷轴",
+        "附着",
+        "窗口"
+      ],
+      "repo": "MengXingXiaoMing/maya-node-plugin-market",
+      "subpath": "nodes/0x00151502",
+      "entry": "scroll_market_node.py",
+      "branch": "main",
+      "run": "cmds.openScrollMarket()",
+      "maya_versions": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "added": "2026-10-29",
+      "updated": "2026-10-29",
+      "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
+    }
+  ]
 }
