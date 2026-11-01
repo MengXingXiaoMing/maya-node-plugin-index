@@ -232,8 +232,8 @@
             "github": "https://github.com/MengXingXiaoMing/maya-node-plugin-market"
         },
         {
-            "name": "锻造大师",
-            "description": "锻剑纳贡小游戏：在契约日内锻造兵器、应对敌袭、向城主纳贡。用系统默认浏览器打开本地 HTML5 游戏。",
+            "name": "锻剑纳贡",
+            "description": "锻剑纳贡（锻造大师）小游戏：在契约日内锻造兵器、应对敌袭、向城主纳贡。用系统默认浏览器打开本地 HTML5 游戏。",
             "author": "詹康明",
             "version": "1.0.0",
             "node_id": "0x001414A0",
@@ -242,7 +242,8 @@
             "tags": [
                 "游戏",
                 "锻造",
-                "休闲"
+                "休闲",
+                "锻剑纳贡"
             ],
             "repo": "MengXingXiaoMing/maya-node-plugin-market",
             "subpath": "nodes/0x001414A0",
