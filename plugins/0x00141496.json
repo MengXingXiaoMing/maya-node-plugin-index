@@ -1,0 +1,28 @@
+{
+  "name": "梦星截屏",
+  "description": "启动梦星截屏（录屏与离线翻译）。以独立进程运行，不占 Maya；软件已做单实例，重复运行会把已有窗口叫到前台。",
+  "author": "詹康明",
+  "version": "1.0.0",
+  "node_id": "0x00141496",
+  "node_name": "screenRecordingNode",
+  "category": "utility",
+  "tags": [
+    "截屏",
+    "录屏",
+    "工具"
+  ],
+  "repo": "MengXingXiaoMing/maya-node-plugin-market",
+  "subpath": "nodes/0x00141496",
+  "entry": "screen_recording_node.py",
+  "branch": "main",
+  "run": "cmds.openScreenRecording()",
+  "maya_versions": [
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+  ],
+  "added": "2026-11-01",
+  "updated": "2026-11-01"
+}
