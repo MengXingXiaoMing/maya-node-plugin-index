@@ -17,7 +17,7 @@
   "subpath": "nodes/0x001414A1",
   "entry": "video_frame_node.py",
   "branch": "main",
-  "run": "import os; _here=os.path.dirname(__file__); exec(compile(open(os.path.join(_here,'test_video_frame_node.py'),encoding='utf-8').read(),'test_video_frame_node.py','exec')); main()",
+  "run": "cmds.createVideoFrame()",
   "maya_versions": [
     "2022",
     "2023",
