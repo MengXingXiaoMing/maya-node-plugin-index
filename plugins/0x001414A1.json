@@ -1,0 +1,30 @@
+{
+  "name": "视频转序列帧节点",
+  "description": "把任意格式视频（mp4/mov/mkv/avi/webm/gif…）实时抽成 PNG/JPG 序列帧，输出 Maya 原生识别的 <f> 序列帧路径与帧号，接到 file 纹理或图像平面上。需要本机安装 ffmpeg/ffprobe。",
+  "author": "詹康明",
+  "version": "1.0.0",
+  "node_id": "0x001414A1",
+  "node_name": "videoFrameNode",
+  "category": "utility",
+  "tags": [
+    "视频",
+    "序列帧",
+    "工具",
+    "ffmpeg",
+    "贴图"
+  ],
+  "repo": "MengXingXiaoMing/maya-node-plugin-market",
+  "subpath": "nodes/0x001414A1",
+  "entry": "video_frame_node.py",
+  "branch": "main",
+  "run": "cmds.openVideoFrame()",
+  "maya_versions": [
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+  ],
+  "added": "2026-11-08",
+  "updated": "2026-11-08"
+}
